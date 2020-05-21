@@ -1,0 +1,39 @@
+# To execute this docker-compose yml file use `docker-compose -f <file_name> up`
+# Add the `-d` flag at the end for detached execution
+version: "3"
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    volumes:
+      - /mnt/user/appdata/grafana:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - influxdb
+
+  influxdb:
+    image: influxdb
+    container_name: influxdb
+    volumes:
+      - ./influxdb.conf:/etc/influxdb/influxdb.conf
+      - ./types.db:/usr/share/collectd/types.db
+      - /mnt/user/appdata/influxdb:/var/lib/influxdb
+    ports:
+      - "8086:8086"
+      - "25826:25826/udp"
+
+  collectd:
+    image: jammsen/collectd-fritzbox:latest
+    network_mode: host
+    container_name: collectd-fritzbox
+    environment:
+      - TIMEZONE=Europe/Berlin
+      - CheckInterval=3
+      - InfluxDbIp=10.0.0.10
+      - InfluxDbCollectdPort=25826
+      - FritzBoxIp=10.0.0.1
+      - FritzBoxUser=collectd
+      - FritzBoxPassword=123collectd
+    depends_on:
+      - influxdb

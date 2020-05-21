@@ -1,0 +1,1937 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "Monitor FRITZ!Box routers",
+    "editable": true,
+    "gnetId": 713,
+    "graphTooltip": 2,
+    "id": 2,
+    "links": [],
+    "panels": [
+      {
+        "datasource": null,
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "id": 26,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "mean"
+            ],
+            "values": false
+          }
+        },
+        "pluginVersion": "7.0.0",
+        "targets": [
+          {
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              }
+            ],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "power"
+              }
+            ]
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "DECT200 - Power consumption",
+        "type": "stat"
+      },
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 6,
+          "x": 6,
+          "y": 0
+        },
+        "id": 28,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "mean"
+            ],
+            "values": false
+          }
+        },
+        "pluginVersion": "7.0.0",
+        "targets": [
+          {
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              }
+            ],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "temperature"
+              }
+            ]
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "DECT200 - Power consumption",
+        "type": "stat"
+      },
+      {
+        "cacheTimeout": null,
+        "colorBackground": true,
+        "colorValue": false,
+        "colors": [
+          "rgba(245, 54, 54, 0.9)",
+          "rgba(237, 129, 40, 0.89)",
+          "#1f78c1"
+        ],
+        "datasource": "collectd",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "format": "none",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 3,
+          "x": 12,
+          "y": 0
+        },
+        "id": 10,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "name": "value to text",
+            "value": 1
+          },
+          {
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": false
+        },
+        "tableColumn": "",
+        "targets": [
+          {
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              }
+            ],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "constatus"
+              }
+            ],
+            "target": ""
+          }
+        ],
+        "thresholds": "1,1",
+        "title": "Connection Status",
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          },
+          {
+            "op": "=",
+            "text": "Disconnected",
+            "value": "0"
+          },
+          {
+            "op": "=",
+            "text": "Connected",
+            "value": "1"
+          }
+        ],
+        "valueName": "current"
+      },
+      {
+        "cacheTimeout": null,
+        "colorBackground": true,
+        "colorValue": false,
+        "colors": [
+          "rgba(245, 54, 54, 0.9)",
+          "rgba(237, 129, 40, 0.89)",
+          "#1f78c1"
+        ],
+        "datasource": "collectd",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "format": "none",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 3,
+          "x": 15,
+          "y": 0
+        },
+        "id": 9,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "name": "value to text",
+            "value": 1
+          },
+          {
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": false
+        },
+        "tableColumn": "",
+        "targets": [
+          {
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              }
+            ],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "dslstatus"
+              }
+            ],
+            "target": ""
+          }
+        ],
+        "thresholds": "1,1",
+        "title": "DSL Link Status",
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          },
+          {
+            "op": "=",
+            "text": "Disconnected",
+            "value": "0"
+          },
+          {
+            "op": "=",
+            "text": "Connected",
+            "value": "1"
+          }
+        ],
+        "valueName": "current"
+      },
+      {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+          "rgba(245, 54, 54, 0.9)",
+          "rgba(237, 129, 40, 0.89)",
+          "rgba(50, 172, 45, 0.97)"
+        ],
+        "datasource": "collectd",
+        "decimals": 1,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "format": "dtdurations",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 6,
+          "x": 18,
+          "y": 0
+        },
+        "id": 13,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "name": "value to text",
+            "value": 1
+          },
+          {
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": false
+        },
+        "tableColumn": "",
+        "targets": [
+          {
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              }
+            ],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "uptime"
+              }
+            ],
+            "target": ""
+          }
+        ],
+        "thresholds": "1,1",
+        "title": "Uptime",
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "current"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 6,
+          "w": 12,
+          "x": 0,
+          "y": 3
+        },
+        "hiddenSeries": false,
+        "id": 24,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pluginVersion": "7.0.0",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "groupBy": [
+              {
+                "params": [
+                  "10s"
+                ],
+                "type": "time"
+              }
+            ],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "power"
+              }
+            ]
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Server - Power consumption",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "decimals": null,
+            "format": "short",
+            "label": "Watt",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "cacheTimeout": null,
+        "datasource": "collectd",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {},
+            "decimals": 1,
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              }
+            ],
+            "max": 116000000,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 50000000
+                },
+                {
+                  "color": "red",
+                  "value": 100000000
+                }
+              ]
+            },
+            "unit": "bps"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 12,
+          "y": 3
+        },
+        "id": 11,
+        "links": [],
+        "options": {
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "7.0.0",
+        "targets": [
+          {
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              }
+            ],
+            "limit": "",
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "receiverate"
+              }
+            ],
+            "target": ""
+          }
+        ],
+        "title": "Current Download",
+        "type": "gauge"
+      },
+      {
+        "cacheTimeout": null,
+        "datasource": "collectd",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {},
+            "decimals": 1,
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              }
+            ],
+            "max": 40000000,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "blue",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 5000000
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 10000000
+                },
+                {
+                  "color": "#e24d42",
+                  "value": 30000000
+                }
+              ]
+            },
+            "unit": "bps"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 18,
+          "y": 3
+        },
+        "id": 12,
+        "links": [],
+        "options": {
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "7.0.0",
+        "targets": [
+          {
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              }
+            ],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "sendrate"
+              }
+            ],
+            "target": ""
+          }
+        ],
+        "title": "Current Upload",
+        "type": "gauge"
+      },
+      {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+          "rgba(245, 54, 54, 0.9)",
+          "rgba(237, 129, 40, 0.89)",
+          "rgba(50, 172, 45, 0.97)"
+        ],
+        "datasource": "collectd",
+        "decimals": 1,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "format": "decbytes",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 0,
+          "y": 9
+        },
+        "id": 3,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "name": "value to text",
+            "value": 1
+          },
+          {
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": true
+        },
+        "tableColumn": "",
+        "targets": [
+          {
+            "dsType": "influxdb",
+            "groupBy": [],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT cumulative_sum(non_negative_difference(last(\"value\"))) FROM \"fritzbox_value\" WHERE (\"type_instance\" = 'totalbytesreceived') AND $timeFilter GROUP BY time($__interval)",
+            "rawQuery": false,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "totalbytesreceived"
+              }
+            ],
+            "target": ""
+          }
+        ],
+        "thresholds": "",
+        "title": "Total Download",
+        "type": "singlestat",
+        "valueFontSize": "100%",
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "total"
+      },
+      {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorPrefix": true,
+        "colorValue": false,
+        "colors": [
+          "rgba(245, 54, 54, 0.9)",
+          "rgba(237, 129, 40, 0.89)",
+          "rgba(50, 172, 45, 0.97)"
+        ],
+        "datasource": "collectd",
+        "decimals": 1,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "format": "decbytes",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 6,
+          "y": 9
+        },
+        "id": 8,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "name": "value to text",
+            "value": 1
+          },
+          {
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(137, 15, 2, 0.18)",
+          "full": false,
+          "lineColor": "#e24d42",
+          "show": true
+        },
+        "tableColumn": "",
+        "targets": [
+          {
+            "dsType": "influxdb",
+            "groupBy": [],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT cumulative_sum(non_negative_difference(last(\"value\"))) FROM \"fritzbox_value\" WHERE (\"type_instance\" = 'totalbytessent') AND $timeFilter GROUP BY time($__interval)",
+            "rawQuery": false,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "non_negative_difference"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "totalbytessent"
+              }
+            ],
+            "target": ""
+          }
+        ],
+        "thresholds": "",
+        "title": "Total Upload",
+        "type": "singlestat",
+        "valueFontSize": "100%",
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "total"
+      },
+      {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+          "rgba(245, 54, 54, 0.9)",
+          "rgba(237, 129, 40, 0.89)",
+          "rgba(50, 172, 45, 0.97)"
+        ],
+        "datasource": "collectd",
+        "decimals": 1,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "format": "decbytes",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 12,
+          "y": 9
+        },
+        "hideTimeOverride": false,
+        "id": 22,
+        "interval": "",
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "name": "value to text",
+            "value": 1
+          },
+          {
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": true
+        },
+        "tableColumn": "",
+        "targets": [
+          {
+            "dsType": "influxdb",
+            "groupBy": [],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT cumulative_sum(max(\"value\")) FROM \"fritzbox_value\" WHERE (\"type_instance\" = 'totalbytesreceived') AND $timeFilter GROUP BY time($__interval) tz('Europe/Berlin')",
+            "rawQuery": false,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "non_negative_difference"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "totalbytesreceived"
+              }
+            ],
+            "target": ""
+          }
+        ],
+        "thresholds": "",
+        "timeFrom": "1d",
+        "timeShift": null,
+        "title": "Last 24h Download",
+        "type": "singlestat",
+        "valueFontSize": "100%",
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "total"
+      },
+      {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+          "rgba(245, 54, 54, 0.9)",
+          "rgba(237, 129, 40, 0.89)",
+          "rgba(50, 172, 45, 0.97)"
+        ],
+        "datasource": "collectd",
+        "decimals": 1,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "format": "decbytes",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 18,
+          "y": 9
+        },
+        "id": 16,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "name": "value to text",
+            "value": 1
+          },
+          {
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(137, 15, 2, 0.18)",
+          "full": false,
+          "lineColor": "#e24d42",
+          "show": true
+        },
+        "tableColumn": "",
+        "targets": [
+          {
+            "dsType": "influxdb",
+            "groupBy": [],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT cumulative_sum(non_negative_difference(last(\"value\"))) FROM \"fritzbox_value\" WHERE (\"type_instance\" = 'totalbytessent') AND $timeFilter GROUP BY time($__interval) tz('Europe/Berlin')",
+            "rawQuery": false,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "non_negative_difference"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "totalbytessent"
+              }
+            ],
+            "target": ""
+          }
+        ],
+        "thresholds": "",
+        "timeFrom": "1d",
+        "title": "Last 24h Upload",
+        "type": "singlestat",
+        "valueFontSize": "100%",
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "total"
+      },
+      {
+        "aliasColors": {
+          "Download": "#1f78c1",
+          "Upload": "#e24d42",
+          "fritzbox_value.non_negative_derivative": "#ba43a9",
+          "fritzbox_value.non_negative_difference": "#e24d42"
+        },
+        "bars": true,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "collectd",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 13
+        },
+        "hiddenSeries": false,
+        "id": 2,
+        "interval": "10s",
+        "legend": {
+          "alignAsTable": false,
+          "avg": false,
+          "current": false,
+          "hideEmpty": false,
+          "hideZero": false,
+          "max": false,
+          "min": false,
+          "rightSide": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": false,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "alias": "Download",
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "24h"
+                ],
+                "type": "time"
+              }
+            ],
+            "hide": false,
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT non_negative_difference(last(cumulative_sum)) FROM (\nSELECT cumulative_sum(non_negative_difference(\"value\")) FROM \"fritzbox_value\" WHERE (\"type_instance\" = 'totalbytesreceived') AND $timeFilter\n) WHERE $timeFilter GROUP BY time(1d) tz('Europe/Berlin')",
+            "rawQuery": true,
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "max"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "totalbytesreceived"
+              }
+            ],
+            "target": ""
+          },
+          {
+            "alias": "Upload",
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "24h"
+                ],
+                "type": "time"
+              }
+            ],
+            "hide": false,
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT non_negative_difference(last(cumulative_sum)) FROM (\nSELECT cumulative_sum(non_negative_difference(\"value\")) FROM \"fritzbox_value\" WHERE (\"type_instance\" = 'totalbytessent') AND $timeFilter \n) WHERE $timeFilter GROUP BY time(1d) tz('Europe/Berlin')",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "max"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "totalbytesreceived"
+              }
+            ],
+            "target": ""
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Daily Traffic",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "decimals": 0,
+            "format": "decbytes",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "decbytes",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {
+          "downstream": "#1F78C1",
+          "downstream max": "#0A437C",
+          "upstream": "#EA6460",
+          "upstream max": "#890F02"
+        },
+        "annotate": {
+          "enable": false
+        },
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "collectd",
+        "editable": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "grid": {},
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 13
+        },
+        "hiddenSeries": false,
+        "id": 18,
+        "legend": {
+          "alignAsTable": false,
+          "avg": false,
+          "current": true,
+          "max": false,
+          "min": false,
+          "rightSide": false,
+          "show": true,
+          "total": false,
+          "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "connected",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "resolution": 100,
+        "scale": 1,
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "alias": "downstream",
+            "dsType": "influxdb",
+            "fields": [
+              {
+                "func": "mean",
+                "name": "value"
+              }
+            ],
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "groupByTags": [],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(value) FROM \"fritzbox_value\" WHERE \"type_instance\" = 'receiverate' AND $timeFilter GROUP BY time($interval)",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "receiverate"
+              }
+            ],
+            "target": "alias(collectd.squirrel.fritzbox.bitrate-receiverate,'downstream')"
+          },
+          {
+            "alias": "downstream max",
+            "dsType": "influxdb",
+            "fields": [
+              {
+                "func": "mean",
+                "name": "value"
+              }
+            ],
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "groupByTags": [],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(value) FROM \"fritzbox_value\" WHERE \"type_instance\" = 'downstreammax' AND $timeFilter GROUP BY time($interval)",
+            "refId": "B",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "downstreammax"
+              }
+            ],
+            "target": "alias(collectd.squirrel.fritzbox.bitrate-downstreammax,'downstream max')"
+          },
+          {
+            "alias": "upstream",
+            "dsType": "influxdb",
+            "fields": [
+              {
+                "func": "mean",
+                "name": "value"
+              }
+            ],
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "groupByTags": [],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(value) FROM \"fritzbox_value\" WHERE \"type_instance\" = 'sendrate' AND $timeFilter GROUP BY time($interval)",
+            "refId": "C",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "sendrate"
+              }
+            ],
+            "target": "alias(collectd.squirrel.fritzbox.bitrate-sendrate,'upstream')"
+          },
+          {
+            "alias": "upstream max",
+            "dsType": "influxdb",
+            "fields": [
+              {
+                "func": "mean",
+                "name": "value"
+              }
+            ],
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "groupByTags": [],
+            "measurement": "fritzbox_value",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(value) FROM \"fritzbox_value\" WHERE \"type_instance\" = 'upstreammax' AND $timeFilter GROUP BY time($interval)",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "type_instance",
+                "operator": "=",
+                "value": "upstreammax"
+              }
+            ],
+            "target": "alias(collectd.squirrel.fritzbox.bitrate-upstreammax,'upstream max')"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Bandwidth",
+        "tooltip": {
+          "msResolution": false,
+          "query_as_alias": true,
+          "shared": true,
+          "sort": 0,
+          "value_type": "cumulative"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "decimals": null,
+            "format": "bps",
+            "label": "",
+            "logBase": 1,
+            "max": "116000000",
+            "min": "0",
+            "show": true
+          },
+          {
+            "format": "short",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        },
+        "zerofill": true
+      }
+    ],
+    "refresh": false,
+    "schemaVersion": 25,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-5m",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
+    },
+    "timezone": "Europe/Berlin",
+    "title": "FRITZ!Box Router Status",
+    "uid": "000000013",
+    "version": 2
+  }
