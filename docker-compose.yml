@@ -13,7 +13,7 @@ services:
       - influxdb
 
   influxdb:
-    image: influxdb
+    image: influxdb:1.8
     container_name: influxdb
     volumes:
       - ./influxdb.conf:/etc/influxdb/influxdb.conf

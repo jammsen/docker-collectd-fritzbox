@@ -18,6 +18,8 @@ This includes a preconfigured Collectd including the Pyhton plugin fritzcollectd
 
 ## Software used
 * Ubuntu 18.04 LTS
+* InfluxDB v1.8 (v2+ does seem to ignore the influxdb.conf)
+* Grafana
 * Collectd
 * Python
 * fritzcollectd
