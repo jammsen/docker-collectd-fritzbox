@@ -17,8 +17,8 @@ RUN apt-get update \
         python3-pip \
         collectd \
     && pip3 install --break-system-packages lxml pbr requests \
-    && pip3 install --break-system-packages --no-deps "fritzconnection<1.0" \
-    && pip3 install --break-system-packages --no-deps fritzcollectd \
+    && pip3 install --break-system-packages --no-deps "fritzconnection==0.8.5" \
+    && pip3 install --break-system-packages --no-deps "fritzcollectd==0.7.0" \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
