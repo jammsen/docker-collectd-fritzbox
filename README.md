@@ -57,7 +57,7 @@ docker compose up -d --build
 |---|---|
 | Ubuntu | 24.04 LTS (collectd base image) |
 | InfluxDB | 1.12 (v2+ removed the native collectd UDP listener) |
-| Grafana | 11.6 |
+| Grafana | 13.0.1 |
 | collectd | system package |
 | fritzcollectd | 0.7.0 (pinned) |
 | fritzconnection | 0.8.5 (pinned; patched for lxml ≥5) |

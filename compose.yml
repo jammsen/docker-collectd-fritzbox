@@ -3,7 +3,7 @@
 # Copy .env.example to .env and fill in your values before starting
 services:
   grafana:
-    image: grafana/grafana:11.6.0@sha256:62d2b9d20a19714ebfe48d1bb405086081bc602aa053e28cf6d73c7537640dfb
+    image: grafana/grafana:13.0.1@sha256:0f86bada30d65ef9d0183b90c1e2682ac92d53d95da8bed322b984ea78a4a73a
     container_name: grafana
     user: "1000:1000"
     environment:
