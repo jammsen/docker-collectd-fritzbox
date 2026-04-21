@@ -1,0 +1,13 @@
+apiVersion: 1
+
+datasources:
+  - name: collectd
+    type: influxdb
+    access: proxy
+    url: http://influxdb:8086
+    database: collectd
+    user: ${INFLUXDB_ADMIN_USER}
+    secureJsonData:
+      password: ${INFLUXDB_ADMIN_PASSWORD}
+    isDefault: true
+    editable: false

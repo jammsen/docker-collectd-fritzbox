@@ -1,0 +1,8 @@
+# Environment file with real credentials – never commit this
+.env
+
+# Persistent data directories – ignore contents but keep the directories
+grafana_data/*
+!grafana_data/.gitkeep
+influxdb_data/*
+!influxdb_data/.gitkeep

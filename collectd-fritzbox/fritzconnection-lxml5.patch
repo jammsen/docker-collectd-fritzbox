@@ -1,0 +1,16 @@
+--- a/fritzconnection/fritzconnection.py
++++ b/fritzconnection/fritzconnection.py
+@@ -175,8 +175,12 @@
+         if address is None:
+             source = filename
+         else:
+             source = 'http://{0}:{1}/{2}'.format(address, port, filename)
+-        tree = etree.parse(source)
+-        self.root = tree.getroot()
++        if isinstance(source, str) and source.startswith('http'):
++            import requests as _r
++            self.root = etree.fromstring(_r.get(source, timeout=10).content)
++        else:
++            tree = etree.parse(source)
++            self.root = tree.getroot()
+         self.namespace = etree.QName(self.root.tag).namespace
