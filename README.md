@@ -55,7 +55,7 @@ docker compose up -d --build
 
 | Component | Version |
 |---|---|
-| Ubuntu | 24.04 LTS (collectd base image) |
+| Ubuntu | 26.04 LTS (collectd base image) |
 | InfluxDB | 1.12 (v2+ removed the native collectd UDP listener) |
 | Grafana | 13.0.1 |
 | collectd | system package |
