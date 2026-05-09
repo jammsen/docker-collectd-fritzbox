@@ -29,7 +29,7 @@ services:
       start_period: 30s
 
   influxdb:
-    image: influxdb:1.12.4@sha256:af052b05a9347fcc3e58db9255a2580d3d9fd5ee6a4ac6ba4743745add0e2545
+    image: influxdb:1.12.4@sha256:e9363fd88d67f8ae6f019f37a30cc136e3644f2cbaea5abd71ad63c96dc6ae08
     container_name: influxdb
     user: "1000:1000"
     healthcheck:
